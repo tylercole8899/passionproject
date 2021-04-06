@@ -1,0 +1,3 @@
+export const ADD_TABLE_DATA = "ADD_TABLE_DATA";
+export const ORDER_TABLE_DATA = "ORDER_TABLE_DATA";
+export const DISPLAY_COIN = "DISPLAY_COIN";

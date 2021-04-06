@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, Store } from 'redux';
+import thunk from "redux-thunk";
+
+import App from './App';
+import './index.css';
+import reducer from "./store/reducer"
+
+const store: Store<CoinTableData, TableAction> & {
+  dispatch: DispatchType
+} = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
