@@ -1,24 +1,19 @@
-import React from 'react';
-import { useSelector, shallowEqual } from 'react-redux';
-import CoinInfo from './components/CoinInfo';
-import { Title } from './components/styles'
+import { useState } from 'react';
+import CoinTable from './components/CoinTable';
+import CoinData from './components/CoinData';
+import { Title } from './components/styles';
 import './App.css';
 
 function App() {
-  const coinData = useSelector(
-    (state: CoinTableData) => state, shallowEqual
-  );
+  const [coinID, setCoinID] = useState("");
   
-  const individualData = coinData.data.filter(coin => {
-    return coin.id === coinData.individual;
-  });
   return (
     <div className="App">
       <Title>Crypto Currency</Title>
 
-      { coinData.viewIndividual ? 
-      console.log(individualData)
-      : <CoinInfo />}
+      { coinID !== "" ? 
+      <CoinData coin={coinID} showIndividual={ setCoinID }/>
+      : <CoinTable showIndividual={ setCoinID }/>}
     </div>
   );
 }

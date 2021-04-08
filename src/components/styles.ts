@@ -6,8 +6,13 @@ export const Title = styled.h1`
 `;
 
 export const Table = styled.table`
-    width: 100%;
+    width: 80%;
     height: 2em;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    border: solid 1px black;
+    border-radius: 20px;
+    overflow: hidden;
 `;
 
 export const Row = styled.tr`
@@ -45,4 +50,20 @@ export const CoinName = styled.a`
 
 export const ChangeArrow = styled.span`
     color: ${props => props.color || "red"};
+`;
+
+export const CoinHeader = styled.div`
+    display: flex;
+    width: 80%;
+    height: 75px;
+    margin: 0 auto;
+    align-items: center;
+    border-radius: 10px;
+    border: solid 1px grey;
+`;
+
+export const CoinHeaderItem = styled.div`
+    width: fit-content;
+    text-align: left;
+    padding: 25px;
 `;

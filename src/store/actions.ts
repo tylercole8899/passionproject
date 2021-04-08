@@ -19,13 +19,3 @@ export function orderTableData(tableData: CoinTableData) {
         dispatch(action);
     }
 }
-
-export function viewCoin(tableData: CoinTableData) {
-    const action: TableAction = {
-        type: actionTypes.DISPLAY_COIN,
-        tableData
-    }
-    return (dispatch: DispatchType) => {
-        dispatch(action);
-    }
-}
