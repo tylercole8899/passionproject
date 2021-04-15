@@ -1,4 +1,4 @@
-import { ADD_TABLE_DATA, DISPLAY_COIN, ORDER_TABLE_DATA } from './actionTypes';
+import { ADD_TABLE_DATA, ORDER_TABLE_DATA } from './actionTypes';
 
 const initialState: CoinTableData = {
     data: [],
@@ -27,20 +27,7 @@ const reducer = (
                 ...state,
                 data: orderedTable
             }
-        case DISPLAY_COIN:
-            const coinID: string = action.tableData.individual;
-            console.log(coinID)
-            return (coinID === "-1") ? {
-                ...state,
-                viewIndividual: false,
-                individual: "-1"
-            }
-            :
-            {
-                ...state,
-                viewIndividual: true,
-                individual: coinID
-            }
+
         default:
             return state;
     }
